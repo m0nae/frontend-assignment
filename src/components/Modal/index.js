@@ -19,23 +19,41 @@ export const Modal = ({ isOpen, onClose, movie }) => {
 
   return ReactDom.createPortal(
     <>
-      <Overlay />
+      <Overlay onClick={onClose} />
       <Container>
-        <CloseBtn onClick={onClose}>X</CloseBtn>
+        <CloseBtn onClick={onClose}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </CloseBtn>
         <Title>{movie.title}</Title>
         <ContentContainer>
           <MoviePoster>
-            <img
-              src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-              alt=""
-            />
+            {movie.poster_path && (
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                alt=""
+              />
+            )}
           </MoviePoster>
           <MoveInfo>
             <ReleaseDate>
               <b>Release Date:</b>{" "}
               {moment(movie.release_date).format("MMMM DD, YYYY")}
             </ReleaseDate>
-            <Description>{movie.overview}</Description>
+            <Description>
+              {movie.overview ? movie.overview : "No description found."}
+            </Description>
             <Rating>
               <b>{movie.vote_average}</b> / 10 ({movie.vote_count} total votes)
             </Rating>

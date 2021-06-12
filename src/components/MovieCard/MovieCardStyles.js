@@ -46,6 +46,7 @@ export const Rating = styled.div`
   left: 13px;
   top: 14px;
   font-weight: 600;
+  z-index: 100;
 `;
 
 export const Image = styled.img`

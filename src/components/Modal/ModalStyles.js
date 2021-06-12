@@ -20,6 +20,10 @@ export const Container = styled.div`
   background-color: #fff;
   transform: translate(-50%, -50%);
   z-index: 100;
+
+  @media (max-width: 640px) {
+    width: 80%;
+  }
 `;
 
 export const Title = styled.div`
@@ -28,6 +32,10 @@ export const Title = styled.div`
   align-self: flex-start;
   margin-bottom: 1rem;
   padding: 0 5%;
+
+  @media (max-width: 640px) {
+    padding-right: 20%;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -42,6 +50,7 @@ export const MoviePoster = styled.div`
   flex: 1;
   margin-right: 1rem;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
 
   > img {
     position: absolute;
@@ -55,7 +64,7 @@ export const MoveInfo = styled.div`
   flex: 1;
   font-size: 14px;
 
-  * > {
+  > * {
     margin-bottom: 1rem;
   }
 `;
@@ -65,7 +74,7 @@ export const ReleaseDate = styled.p`
 `;
 
 export const Description = styled.p`
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 40%;
 `;
 
@@ -77,7 +86,19 @@ export const CloseBtn = styled.button`
   height: 24px;
   border: 1px solid #141e35;
   outline: none;
+  background-color: #fff;
   right: 19px;
   top: 17px;
+  line-height: 1;
+  text-align: center;
+  /* display: flex;
+  align-items: center; */
   cursor: pointer;
+
+  > * {
+    height: 17px;
+    width: 17px;
+    left: 0;
+    transform: translate(-20%, 10%);
+  }
 `;

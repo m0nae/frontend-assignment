@@ -5,6 +5,10 @@ export const Container = styled.div`
   padding: 8px 0.5rem;
   border: 1px solid #c0c4cc;
   border-radius: 3px;
+
+  @media (max-width: 760px) {
+    margin-left: 1rem;
+  }
 `;
 
 export const Input = styled.input`
