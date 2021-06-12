@@ -20,7 +20,7 @@ export const Modal = ({ isOpen, onClose, movie }) => {
   return ReactDom.createPortal(
     <>
       <Overlay onClick={onClose} />
-      <Container>
+      <Container role="dialog">
         <CloseBtn onClick={onClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ export const Modal = ({ isOpen, onClose, movie }) => {
             {movie.poster_path && (
               <img
                 src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                alt=""
+                alt="movie poster"
               />
             )}
           </MoviePoster>

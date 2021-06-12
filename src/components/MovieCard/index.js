@@ -12,7 +12,7 @@ export const MovieCard = ({ image, title, rating, id, handleClick }) => {
       <Container onClick={() => handleClick(id)}>
         <ImgContainer>
           <Rating>{rating}</Rating>
-          <Image src={image} alt="" />
+          <Image src={image} alt="movie poster" />
         </ImgContainer>
         <Title>{title}</Title>
       </Container>

@@ -91,8 +91,6 @@ export const CloseBtn = styled.button`
   top: 17px;
   line-height: 1;
   text-align: center;
-  /* display: flex;
-  align-items: center; */
   cursor: pointer;
 
   > * {

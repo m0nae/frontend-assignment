@@ -5,6 +5,7 @@ import { MovieCard } from "../components/MovieCard";
 import { Header } from "./Header";
 import { Layout } from "./Layout";
 import { Modal } from "./Modal";
+import { MovieList } from "./MovieList";
 import { getMovies } from "../utils/getMovies";
 
 const App = () => {
@@ -79,24 +80,6 @@ const Heading = styled.h2`
   margin-bottom: 22px;
   font-size: 24px;
   font-weight: 700;
-`;
-
-const MovieList = styled.div`
-  display: grid;
-  grid-row-gap: 25px;
-  grid-column-gap: 27px;
-
-  @media (min-width: 760px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1000px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 1324px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 `;
 
 export default App;
