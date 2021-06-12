@@ -6,6 +6,6 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   background-color: #fff;
-  border-bottom: 2px solid gray;
+  border-bottom: 1px solid #c0c4cc;
   height: 90px;
 `;

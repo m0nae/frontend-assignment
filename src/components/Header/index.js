@@ -1,4 +1,6 @@
 import logo from "../../images/logo.svg";
+import { SearchIcon } from "../Icons/SearchIcon";
+import { SearchInput } from "../SearchInput";
 import { Container } from "./HeaderStyles";
 
 export const Header = () => {
@@ -6,7 +8,7 @@ export const Header = () => {
     <>
       <Container>
         <img src={logo} alt="Timescale" height="36px" width="136px" />
-        <div>Insert input component here</div>
+        <SearchInput>Search for a movie</SearchInput>
       </Container>
     </>
   );

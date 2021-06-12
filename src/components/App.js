@@ -7,6 +7,7 @@ const App = () => {
   return (
     <Layout>
       <Header />
+      <Heading>Most Recent Movies</Heading>
       <MovieList>
         <MovieCard />
         <MovieCard />
@@ -25,6 +26,13 @@ const App = () => {
   );
 };
 
+const Heading = styled.h2`
+  margin-top: 2.2rem;
+  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 700;
+`;
+
 const MovieList = styled.div`
   display: grid;
   grid-row-gap: 25px;
@@ -37,13 +45,13 @@ const MovieList = styled.div`
   @media (min-width: 640px) {
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
-    padding: 50px 0;
+    /* padding: 50px 0; */
   }
 
   @media (min-width: 768px) {
     margin: 0 auto;
     grid-template-columns: repeat(3, 1fr);
-    padding: 50px 0;
+    /* padding: 50px 0; */
   }
 
   @media (min-width: 1024px) {
