@@ -8,6 +8,13 @@ export const Container = styled.div`
   border: 1px solid #e1e3e6;
   border-radius: 8px;
   overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+
+  :hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -15,10 +22,14 @@ export const ImgContainer = styled.div`
   background-color: gray;
   height: 84%;
   width: 100%;
+  overflow: hidden;
 `;
 
 export const Title = styled.p`
   text-align: center;
+  padding: 0 1rem;
+  margin: 0;
+  margin-top: 7px;
 `;
 
 export const Rating = styled.div`
@@ -35,4 +46,11 @@ export const Rating = styled.div`
   left: 13px;
   top: 14px;
   font-weight: 600;
+`;
+
+export const Image = styled.img`
+  position: absolute;
+  top: -60px;
+  object-fit: cover;
+  width: 100%;
 `;

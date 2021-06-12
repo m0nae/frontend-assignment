@@ -1,13 +1,20 @@
-import { Container, ImgContainer, Rating, Title } from "./MovieCardStyles";
+import {
+  Container,
+  Image,
+  ImgContainer,
+  Rating,
+  Title,
+} from "./MovieCardStyles";
 
-export const MovieCard = () => {
+export const MovieCard = ({ image, title, rating }) => {
   return (
     <>
       <Container>
         <ImgContainer>
-          <Rating>7.9</Rating>
+          <Rating>{rating}</Rating>
+          <Image src={image} alt="" />
         </ImgContainer>
-        <Title>Movie Title</Title>
+        <Title>{title}</Title>
       </Container>
     </>
   );

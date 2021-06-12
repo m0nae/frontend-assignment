@@ -1,27 +1,34 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { MovieCard } from "../components/MovieCard";
 import { Header } from "./Header";
 import { Layout } from "./Layout";
 
 const App = () => {
+  const [movieData, setMovieData] = useState([]);
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&language=en-US`,
+    }).then((data) => setMovieData(data.data.results));
+  }, []);
+
+  const movies = movieData.map((movie) => (
+    <MovieCard
+      id={movie.id}
+      image={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+      rating={movie.vote_average}
+      title={movie.title}
+    />
+  ));
+
   return (
     <Layout>
       <Header />
       <Heading>Most Recent Movies</Heading>
-      <MovieList>
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-      </MovieList>
+      <MovieList>{movies && movies}</MovieList>
     </Layout>
   );
 };
