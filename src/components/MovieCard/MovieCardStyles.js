@@ -7,11 +7,11 @@ export const Container = styled.div`
   box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.1);
   border: 1px solid #e1e3e6;
   border-radius: 8px;
+  cursor: pointer;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
 
   :hover {
-    cursor: pointer;
     transform: translateY(-5px);
     transition: all 0.2s ease-in-out;
   }

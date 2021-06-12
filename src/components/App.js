@@ -4,9 +4,12 @@ import styled from "styled-components";
 import { MovieCard } from "../components/MovieCard";
 import { Header } from "./Header";
 import { Layout } from "./Layout";
+import { Modal } from "./Modal";
 
 const App = () => {
   const [movieData, setMovieData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState();
 
   useEffect(() => {
     axios({
@@ -15,12 +18,17 @@ const App = () => {
     }).then((data) => setMovieData(data.data.results));
   }, []);
 
+  const handleClick = (id) => {
+    setSelectedMovie(id);
+    setIsOpen(true);
+  };
   const movies = movieData.map((movie) => (
     <MovieCard
       id={movie.id}
       image={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
       rating={movie.vote_average}
       title={movie.title}
+      handleClick={handleClick}
     />
   ));
 
@@ -29,6 +37,11 @@ const App = () => {
       <Header />
       <Heading>Most Recent Movies</Heading>
       <MovieList>{movies && movies}</MovieList>
+      <Modal
+        movie={movieData.filter((movie) => movie.id === selectedMovie)[0]}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
     </Layout>
   );
 };

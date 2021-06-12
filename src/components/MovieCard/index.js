@@ -6,10 +6,10 @@ import {
   Title,
 } from "./MovieCardStyles";
 
-export const MovieCard = ({ image, title, rating }) => {
+export const MovieCard = ({ image, title, rating, id, handleClick }) => {
   return (
     <>
-      <Container>
+      <Container onClick={() => handleClick(id)}>
         <ImgContainer>
           <Rating>{rating}</Rating>
           <Image src={image} alt="" />
