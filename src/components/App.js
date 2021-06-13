@@ -51,6 +51,7 @@ const App = () => {
 
   const movies = movieData.map((movie) => (
     <MovieCard
+    key={movie.id}
       id={movie.id}
       image={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
       rating={movie.vote_average}
